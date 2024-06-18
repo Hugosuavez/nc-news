@@ -34,7 +34,7 @@ export const fetchComments = (article_id, p) => {
     })
 }
 
-export const updateVotes = (article_id, inc_votes) => {
+export const updateArticleVotes = (article_id, inc_votes) => {
     const endpoint = `/api/articles/${article_id}`
     const requestBody = {inc_votes}
     return newsApi
