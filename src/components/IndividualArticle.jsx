@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { fetchIndividualArticle } from "../utils/apicalls";
+import { fetchIndividualArticle, updateVotes } from "../utils/apicalls";
 import { useEffect, useState } from "react";
 import { Comments } from "./Comments";
 
@@ -28,12 +28,14 @@ export const IndividualArticle = () => {
     if(plusOrMinus === 'minus'){inc_votes = -1}
     
     setVotes(votes + inc_votes)
+    updateVotes(article_id, inc_votes)
+    
   }
 
   if (loading) {
     return <p>Loading...</p>;
   }
-
+  
  
   const date = new Date(article.created_at).toDateString();
 
@@ -47,7 +49,7 @@ export const IndividualArticle = () => {
         <p>{article.body}</p>
         <p>{date}</p>
         <fieldset>
-        <legend>Votes {article.votes}</legend>
+        <legend>Votes {votes}</legend>
         <button id="minus" onClick={handleVote}>-</button>
         <button id="plus" onClick={handleVote}>+</button>
         </fieldset>
