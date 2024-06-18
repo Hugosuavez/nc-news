@@ -5,10 +5,9 @@ import { PageButtons } from "./Pagebuttons"
 export const Articles = ({articles, setArticles}) => {
 
     const [totalArticles, setTotalArticles] = useState(0)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     
     useEffect(() => {
-        setLoading(true)
         fetchArticles()
         .then((body) => {
             setLoading(false)

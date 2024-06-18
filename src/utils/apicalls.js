@@ -22,3 +22,14 @@ export const fetchIndividualArticle = (id) => {
         return response
     })
 }
+
+export const fetchComments = (article_id, p) => {
+    const endpoint = `/api/articles/${article_id}/comments`
+    const params = {p}
+    
+    return newsApi
+    .get(endpoint, {params})
+    .then((response) => {
+        return response
+    })
+}

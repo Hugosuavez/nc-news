@@ -19,7 +19,7 @@ const [articles, setArticles] = useState([])
   <div className='content'>
   <Routes>
     <Route path="/" element={<Articles articles={articles} setArticles={setArticles} />} />
-    <Route path="/api/articles/:article_id" element={<><IndividualArticle /></>}/>
+    <Route path="/api/articles/:article_id" element={<IndividualArticle />}/>
   </Routes>
   </div>
   </div>
