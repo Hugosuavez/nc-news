@@ -26,7 +26,7 @@ const handleVote = () => {
       inc_votes = 1
     }
 
-    setVotes((currentCount) => currentCount + 1)
+    setVotes((currentCount) => currentCount + inc_votes)
 
     updateArticleVotes(article.article_id, inc_votes).then(()=> {
 
