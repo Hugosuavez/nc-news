@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { UserContext } from './user-context'
+import { UserContext } from './UserContext'
 
 
 export const Header = () => {
