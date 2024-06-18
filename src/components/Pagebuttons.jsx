@@ -2,13 +2,19 @@ import { useState } from "react"
 import { fetchArticles } from "../utils/apicalls"
 
 export const PageButtons = ({totalArticles, setArticles}) => {
+
+    const [pageNumber, setPageNumber]= useState(1)
     const handleClick = (event) => {
-        fetchArticles(event.target.id).then((body) => {
+        const page = event.target.id
+        setPageNumber(page)
+        fetchArticles(page).then((body) => {
             setArticles(body.data.articles)
         })
     }
 
     const buttonArray = []
+    const pages = Math.ceil(totalArticles / 10)
+
     let totalButtons = totalArticles / 10
     let i = 1
 
@@ -19,5 +25,6 @@ export const PageButtons = ({totalArticles, setArticles}) => {
         
     }
     return (<>{buttonArray}
-    <p>Viewing 10 of {totalArticles} articles</p></>)
+    <p>Viewing page {pageNumber} of {pages}</p>
+    <p>Total Results {totalArticles}</p></>)
 }

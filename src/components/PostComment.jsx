@@ -30,6 +30,6 @@ export const PostComment = ({article_id, setComments}) => {
    {return (<form className="comment-box">
     <input value={newComment} className="comment-input" type="text" required onChange={handleComment} />
     <button onClick={submitComment}>Post Comment</button>
-    {err ? <p>{err}</p> : null}
+    {err ? <p className='error-message'>{err}</p> : null}
     </form>)
 }}
