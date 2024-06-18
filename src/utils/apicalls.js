@@ -39,7 +39,4 @@ export const updateVotes = (article_id, inc_votes) => {
     const requestBody = {inc_votes}
     return newsApi
 .patch(endpoint, requestBody)
-.then((response) => {
-    return response
-})
 }

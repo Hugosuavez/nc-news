@@ -9,6 +9,7 @@ export const IndividualArticle = () => {
   const [loading, setLoading] = useState(true);
   const [toggleComments, setToggleComments] = useState(false);
   const [votes, setVotes] = useState()
+  const [err, setErr] = useState(null)
 
   useEffect(() => {
     fetchIndividualArticle(article_id).then((response) => {
@@ -28,7 +29,11 @@ export const IndividualArticle = () => {
     if(plusOrMinus === 'minus'){inc_votes = -1}
     
     setVotes(votes + inc_votes)
-    updateVotes(article_id, inc_votes)
+    updateVotes(article_id, 'hello').catch((err) => {
+      console.log('err')
+      setVotes(votes - inc_votes)
+      setErr('Something went wrong, log in to vote on articles')
+    })
     
   }
 
@@ -52,6 +57,7 @@ export const IndividualArticle = () => {
         <legend>Votes {votes}</legend>
         <button id="minus" onClick={handleVote}>-</button>
         <button id="plus" onClick={handleVote}>+</button>
+        {err ? <p>{err}</p> : null}
         </fieldset>
         <button onClick={handleClick}>Comments: {article.comment_count}</button>
       </section>
