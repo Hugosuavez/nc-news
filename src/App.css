@@ -5,18 +5,19 @@
   text-align: center;
 }
 
-nav {
-  text-align: left;
+.navbar {
+  text-align: center;
+  padding-top: 50px;
 }
 
 .article-card {
   list-style-type: none;
   border: 1px solid black;
   border-radius: 20px;
-  margin: 10px;
+  margin-bottom: 10px;
   box-sizing: border-box;
   width: auto;
-  
+  padding: 10px
 }
 
 .article-image {
@@ -35,11 +36,11 @@ nav {
 }
 
 .sidebar {
-    width: 250px;
+    width: 15%;
     color: white;
     background-color: rgb(58, 117, 128);
     padding: 20px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -47,10 +48,29 @@ nav {
 }
 
 .content {
- margin-left: 250px;
+ margin-left: 15%;
 }
 .header {
+  margin-left: 15%;
   margin-bottom: 20px;
   text-align: center;
-  background-color: saddlebrown;
+  background-color: blue;
+
+}
+
+.individual-article {
+  margin-left: 5%;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  img {
+    display: none;
+  }
+  
 }

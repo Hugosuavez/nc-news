@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { fetchArticles } from "../utils/apicalls"
 
-export const PageButtonCard = ({totalArticles, setArticles}) => {
+export const PageButtons = ({totalArticles, setArticles}) => {
     const handleClick = (event) => {
         fetchArticles(event.target.id).then((body) => {
             setArticles(body.data.articles)

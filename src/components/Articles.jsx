@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { fetchArticles } from "../utils/apicalls"
-import { ArticleCard } from "./articlecards"
-import { PageButtonCard } from "./pagebuttons"
-
+import { ArticleCards } from "./ArticleCards"
+import { PageButtons } from "./Pagebuttons"
 export const Articles = ({articles, setArticles}) => {
 
     const [totalArticles, setTotalArticles] = useState(0)
@@ -23,7 +22,7 @@ export const Articles = ({articles, setArticles}) => {
     
     if(loading){return <p>Loading...</p>}
 
-    return (<><ul className="article-list"><ArticleCard articles={articles}/></ul>
-            <PageButtonCard totalArticles={totalArticles} setArticles={setArticles}/>
+    return (<><ul className="article-list"><ArticleCards articles={articles}/></ul>
+            <PageButtons totalArticles={totalArticles} setArticles={setArticles}/>
     </>)
 }
