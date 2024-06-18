@@ -6,25 +6,30 @@ import { addComment } from '../utils/apicalls'
 export const PostComment = ({article_id, setComments}) => {
     const {username} = useContext(UserContext)
     const [newComment, setNewComment] = useState('')
-
+    const [err, setErr] = useState(null)
     const handleComment = (event) => {
         setNewComment(event.target.value)
+        setErr(null)
     }
 
     const submitComment = (event) => {
         event.preventDefault()
-        addComment(article_id, username, newComment)
+       if(!newComment){setErr('Please write a comment...')}
+       else
+        {addComment(article_id, username, newComment)
         .then((response) => {
+            setNewComment('')
             console.log(response.data.comment)
             setComments((currentComments) => [response.data.comment, ...currentComments])
         })
         .catch((err) => {
-            console.log(err)
-        })
+            setErr('Something went wrong, please try again...')
+        })}
     }
-
-    return (<form className="comment-box">
-    <input value={newComment} className="comment-input" type="text" onChange={handleComment}/>
+    if(username)
+   {return (<form className="comment-box">
+    <input value={newComment} className="comment-input" type="text" required onChange={handleComment} />
     <button onClick={submitComment}>Post Comment</button>
+    {err ? <p>{err}</p> : null}
     </form>)
-}
+}}
