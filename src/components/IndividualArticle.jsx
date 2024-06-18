@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { fetchIndividualArticle } from "../utils/apicalls";
 import { useEffect, useState } from "react";
 import { Comments } from "./Comments";
+import { UpdateVotes } from "./UpdateVotes";
 
 export const IndividualArticle = () => {
   const { article_id } = useParams();
@@ -16,14 +17,14 @@ export const IndividualArticle = () => {
     });
   }, [article_id]);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  const handleClick = () => {
+   const handleClick = () => {
     toggleComments ? setToggleComments(false) : setToggleComments(true);
   };
 
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  
   const date = new Date(article.created_at).toDateString();
 
   return (
@@ -35,7 +36,7 @@ export const IndividualArticle = () => {
         <img width="200px" src={article.article_img_url} alt="" />
         <p>{article.body}</p>
         <p>{date}</p>
-        <button>Votes: {article.votes}</button>
+        <UpdateVotes article={article} />
         <button onClick={handleClick}>Comments: {article.comment_count}</button>
       </section>
       {toggleComments ? (

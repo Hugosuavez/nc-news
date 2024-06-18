@@ -33,3 +33,10 @@ export const fetchComments = (article_id, p) => {
         return response
     })
 }
+
+export const updateArticleVotes = (article_id, inc_votes) => {
+    const endpoint = `/api/articles/${article_id}`
+    const requestBody = {inc_votes}
+    return newsApi
+.patch(endpoint, requestBody)
+}
