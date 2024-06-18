@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Comments } from "./Comments";
 import { UpdateVotes } from "./UpdateVotes";
 
+
 export const IndividualArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
@@ -37,7 +38,7 @@ export const IndividualArticle = () => {
         <p>{article.body}</p>
         <p>{date}</p>
         <UpdateVotes article={article} />
-        <button onClick={handleClick}>Comments: {article.comment_count}</button>
+        <button onClick={handleClick}>{article.comment_count} comments, click to view</button>
       </section>
       {toggleComments ? (
         <Comments

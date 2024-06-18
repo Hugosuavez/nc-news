@@ -2,8 +2,8 @@ import { useState, useEffect } from "react"
 import { fetchComments } from "../utils/apicalls"
 import { CommentCards } from "./CommentCards"
 import { CommentPageButtons } from "./CommentPageButtons";
-
-export const Comments = ({article_id,totalComments}) => {
+import { PostComment } from "./PostComment";
+export const Comments = ({article_id, totalComments}) => {
     
     const [loading, setLoading] = useState(true)
     const [comments, setComments] = useState([])
@@ -20,7 +20,7 @@ export const Comments = ({article_id,totalComments}) => {
 
     if(loading){return <p>Loading...</p>}
     return (<>
-    
+    <PostComment article_id={article_id} />
     <ul>{<CommentCards comments={comments} />}</ul>
     <CommentPageButtons totalComments={totalComments} setComments={setComments} article_id={article_id}/>
     </>)

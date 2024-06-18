@@ -20,9 +20,20 @@
   padding: 10px
 }
 
+.comment-box {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin-left: 5%;
+  margin-top: 10px;
+  padding: 10px;
+  width: auto;
+}
+
+.comment-input {
+width: auto;}
+
 .article-image {
   width:90%
-
 }
 
 .article-list {
@@ -72,5 +83,4 @@
   img {
     display: none;
   }
-  
 }
