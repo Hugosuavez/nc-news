@@ -40,3 +40,21 @@ export const updateArticleVotes = (article_id, inc_votes) => {
     return newsApi
 .patch(endpoint, requestBody)
 }
+
+export const addComment = (article_id, username, body) => {
+    
+    const commentBody = {
+        username, body
+    }
+    
+    const endpoint = `/api/articles/${article_id}/comments`
+    
+    return newsApi
+    .post(endpoint, commentBody)
+    .then((response) => {
+        return response
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+}
