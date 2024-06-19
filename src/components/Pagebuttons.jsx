@@ -1,14 +1,15 @@
 import { useState } from "react"
 import { fetchArticles } from "../utils/apicalls"
 
-export const PageButtons = ({totalArticles, setArticles}) => {
+export const PageButtons = ({totalArticles, setArticles, topicQuery}) => {
 
     const [pageNumber, setPageNumber]= useState(1)
     
     const handleClick = (event) => {
         const page = event.target.id
         setPageNumber(page)
-        fetchArticles(page).then((body) => {
+        fetchArticles(page, topicQuery).then((body) => {
+            console.log(body.data.articles)
             setArticles(body.data.articles)
         })
     }

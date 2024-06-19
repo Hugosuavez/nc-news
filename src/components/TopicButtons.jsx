@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { fetchArticles, fetchTopics } from "../utils/apicalls"
 
-export const TopicButtons = ({setArticles}) => {
+export const TopicButtons = ({setArticles, setTopicQuery}) => {
     const [topics, setTopics] = useState([])
 
     useEffect(()=> {
@@ -11,12 +11,7 @@ export const TopicButtons = ({setArticles}) => {
     }, [])
 
     const handleTopic = (event) => {
-        const page = 1
-        const slug = event.target.id
-       fetchArticles(page, slug).then((response) => {
-        
-        setArticles(response.data.articles)
-       })
+       setTopicQuery(event.target.id)
     }
 
     const buttons = topics.map((topic) => {
