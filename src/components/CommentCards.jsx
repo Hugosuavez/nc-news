@@ -12,7 +12,7 @@ export const CommentCards = ({comments}) => {
             <h4 id="comment-title">{comment.author} | {date}</h4>
             <p>{comment.body}</p>
             <button>Votes: {comment.votes}</button>
-            {comment.author === username ? <DeleteButton /> : null} 
+            {comment.author === username ? <DeleteButton comment_id={comment.comment_id}/> : null} 
         </li>)
     })
 }

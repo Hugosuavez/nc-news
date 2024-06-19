@@ -1,10 +1,13 @@
+import { useState } from "react"
 import { deleteComment } from "../utils/apicalls"
 
 
-export const DeleteButton = () => {
-
+export const DeleteButton = ({comment_id}) => {
+    
+    
     const handleDelete = () => {
-        deleteComment()
+        deleteComment(comment_id)
+    
     }
 
 
