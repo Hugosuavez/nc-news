@@ -58,3 +58,7 @@ export const addComment = (article_id, username, body) => {
         console.log(err)
     })
 }
+
+export const deleteComment = () => {
+    
+}

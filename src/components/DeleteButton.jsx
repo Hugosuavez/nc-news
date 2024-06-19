@@ -1,7 +1,12 @@
+import { deleteComment } from "../utils/apicalls"
 
 
 export const DeleteButton = () => {
 
+    const handleDelete = () => {
+        deleteComment()
+    }
 
-    return <button>Delete Comment</button>
+
+    return <button onClick={handleDelete}>Delete Comment</button>
 }
