@@ -12,7 +12,5 @@ export const DeleteButton = ({comment_id, comments, setComments}) => {
         deleteComment(comment_id)
     }
  
-    
-
     return <button onClick={handleDelete}>Delete Comment</button>
 }

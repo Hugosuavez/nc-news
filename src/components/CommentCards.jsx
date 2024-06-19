@@ -3,7 +3,6 @@ import { useContext, useState } from 'react'
 import { UserContext } from './UserContext'
 
 export const CommentCards = ({comments, setComments}) => {
-   
     const {username} = useContext(UserContext)
 
     return comments.map((comment) => {
