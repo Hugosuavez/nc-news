@@ -21,7 +21,7 @@ export const Comments = ({article_id, totalComments}) => {
     if(loading){return <p>Loading...</p>}
     return (<>
     <PostComment article_id={article_id} setComments={setComments} />
-    <ul>{<CommentCards comments={comments} />}</ul>
-    <CommentPageButtons totalComments={totalComments} setComments={setComments} article_id={article_id}/>
+    <ul>{<CommentCards comments={comments} setComments={setComments}/>}</ul>
+    <CommentPageButtons totalComments={totalComments} setComments={setComments}  article_id={article_id}/>
     </>)
 }
