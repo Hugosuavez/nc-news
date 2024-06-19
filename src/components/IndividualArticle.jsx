@@ -34,7 +34,7 @@ export const IndividualArticle = () => {
         <h3 id="title">
           {article.title} by {article.author}
         </h3>
-        <img width="200px" src={article.article_img_url} alt="" />
+        <img className="article-image" width="200px" src={article.article_img_url} alt="" />
         <p>{article.body}</p>
         <p>{date}</p>
         <UpdateVotes article={article} />
