@@ -14,7 +14,7 @@ const [articles, setArticles] = useState([])
   <Header />
   </div>
   <div className='sidebar'>
-  <Navbar />
+  <Navbar setArticles={setArticles}/>
   </div>
   <div className='content'>
   <Routes>

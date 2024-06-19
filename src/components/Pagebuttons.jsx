@@ -4,6 +4,7 @@ import { fetchArticles } from "../utils/apicalls"
 export const PageButtons = ({totalArticles, setArticles}) => {
 
     const [pageNumber, setPageNumber]= useState(1)
+    
     const handleClick = (event) => {
         const page = event.target.id
         setPageNumber(page)

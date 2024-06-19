@@ -4,10 +4,11 @@ const newsApi = axios.create({
     baseURL: 'https://be-nc-news-unk8.onrender.com'
 })
 
-export const fetchArticles = (page) => {
+export const fetchArticles = (page, slug) => {
     return newsApi
     .get('/api/articles', {params: {
-        p: page
+        p: page,
+        topic: slug
     }})
     .then((response) => {
         
@@ -60,8 +61,16 @@ export const addComment = (article_id, username, body) => {
 }
 
 export const deleteComment = (comment_id) => {
-    newsApi
+    return newsApi
     .delete(`/api/comments/${comment_id}`).then((response) => {
+        return response
+    })
+}
+
+export const fetchTopics = () => {
+    return newsApi
+    .get('/api/topics')
+    .then((response) => {
         return response
     })
 }
