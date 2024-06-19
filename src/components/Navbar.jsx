@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+import { TopicButtons } from "./TopicButtons"
 
 export const Navbar = () => {
     const navigate = useNavigate()
@@ -10,6 +11,7 @@ export const Navbar = () => {
     <button 
    className="nav-button" onClick={handleClick}>Home</button>
     <br />
+    <TopicButtons />
     <button className="nav-button">Topics</button>
     </nav>)
 }

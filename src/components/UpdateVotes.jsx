@@ -7,6 +7,7 @@ export const UpdateVotes = ({ article }) => {
   const { username } = useContext(UserContext);
 
   const [votes, setVotes] = useState();
+  
   useEffect(() => {
     setVotes(article.votes);
   }, []);
