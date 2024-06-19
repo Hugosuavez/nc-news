@@ -31,9 +31,9 @@ export const IndividualArticle = () => {
   return (
     <>
       <section className="individual-article">
-        <h2>
+        <h3 id="title">
           {article.title} by {article.author}
-        </h2>
+        </h3>
         <img width="200px" src={article.article_img_url} alt="" />
         <p>{article.body}</p>
         <p>{date}</p>

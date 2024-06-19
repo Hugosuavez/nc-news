@@ -7,8 +7,9 @@ export const Navbar = () => {
         navigate('/')
     }
     return (<nav className="navbar">
-    <button onClick={handleClick}>Home</button>
+    <button 
+   className="nav-button" onClick={handleClick}>Home</button>
     <br />
-    <button>Topics</button>
+    <button className="nav-button">Topics</button>
     </nav>)
 }
