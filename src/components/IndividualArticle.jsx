@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Comments } from "./Comments";
 import { UpdateVotes } from "./UpdateVotes";
 
+
 export const IndividualArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
@@ -30,14 +31,14 @@ export const IndividualArticle = () => {
   return (
     <>
       <section className="individual-article">
-        <h2>
+        <h3 id="title">
           {article.title} by {article.author}
-        </h2>
-        <img width="200px" src={article.article_img_url} alt="" />
+        </h3>
+        <img className="article-image" width="200px" src={article.article_img_url} alt="" />
         <p>{article.body}</p>
         <p>{date}</p>
         <UpdateVotes article={article} />
-        <button onClick={handleClick}>Comments: {article.comment_count}</button>
+        <button onClick={handleClick}>{article.comment_count} comments, click to view</button>
       </section>
       {toggleComments ? (
         <Comments

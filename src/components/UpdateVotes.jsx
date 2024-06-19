@@ -44,7 +44,7 @@ const handleVote = () => {
         <fieldset>
         <legend>Votes {votes}</legend>
         <button onClick={handleVote}>{userVoted ? '-' : '+'}</button>
-        {err ? <p>{err}</p> : null}
+        {err ? <p className="error-message">{err}</p> : null}
         </fieldset>
         </>)
 }
