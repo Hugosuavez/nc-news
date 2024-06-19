@@ -1,9 +1,9 @@
 import { DeleteButton } from "./DeleteButton"
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { UserContext } from './UserContext'
 
-export const CommentCards = ({comments}) => {
-
+export const CommentCards = ({comments, setComments}) => {
+   
     const {username} = useContext(UserContext)
 
     return comments.map((comment) => {
@@ -12,7 +12,7 @@ export const CommentCards = ({comments}) => {
             <h4 id="comment-title">{comment.author} | {date}</h4>
             <p>{comment.body}</p>
             <button>Votes: {comment.votes}</button>
-            {comment.author === username ? <DeleteButton comment_id={comment.comment_id}/> : null} 
+            {comment.author === username ? <DeleteButton comment_id={comment.comment_id} setComments={setComments} comments={comments}/> : null} 
         </li>)
     })
 }
