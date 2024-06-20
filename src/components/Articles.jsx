@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import { useSearchParams } from "react-router-dom"
 import { fetchArticles } from "../utils/apicalls"
 import { ArticleCards } from "./ArticleCards"
-import { PageButtons } from "./Pagebuttons"
-import { useSearchParams } from "react-router-dom"
 import { ArticleQueries } from './ArticleQueries'
+import { PageButtons } from "./Pagebuttons"
+
 export const Articles = ({articles, setArticles}) => {
 
     const [totalArticles, setTotalArticles] = useState(0)
@@ -12,11 +13,7 @@ export const Articles = ({articles, setArticles}) => {
 
     const [searchParams, setSearchParams] = useSearchParams()
     const topicQuery = searchParams.get("topic")
-    const sortByQuery = searchParams.get("sort_by")
-    const orderQuery = searchParams.get("order")
     
-    
-
     useEffect(() => {
         const page = 1
         fetchArticles(page, topicQuery, sortByQuery, orderQuery)
@@ -33,7 +30,7 @@ export const Articles = ({articles, setArticles}) => {
     
     if(loading){return <p>Loading...</p>}
 
-    return (<><ArticleQueries />
+    return (<><ArticleQueries setSearchParams={setSearchParams} searchParams={searchParams}/>
     <ul className="article-list"><ArticleCards articles={articles}/></ul>
             <PageButtons totalArticles={totalArticles} setArticles={setArticles} topicQuery={topicQuery} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </>)
