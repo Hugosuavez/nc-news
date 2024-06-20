@@ -1,7 +1,6 @@
 
 
-export const ErrorPage = (error) => {
+export const ErrorPage = ({error}) => {
     
-    return <p>Something went wrong</p>
-    
+return <p>{error.response.data.msg}</p>
 }

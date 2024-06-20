@@ -5,14 +5,16 @@ import { Articles } from './components/Articles'
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { IndividualArticle } from './components/IndividualArticle'
-import { ErrorPage } from './components/ErrorPage'
-
+import { DefaultErrorPage } from './components/DefaultErrorPage'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify'
 function App() {
 
 const [articles, setArticles] = useState([])
 
  return (<div className='container'>
   <div className='header'>
+    <ToastContainer/>
   <Header />
   </div>
   <div className='sidebar'>
@@ -20,7 +22,7 @@ const [articles, setArticles] = useState([])
   </div>
   <div className='content'>
   <Routes>
-    <Route path="*" element={<ErrorPage />} />
+    <Route path="*" element={<DefaultErrorPage />} />
     <Route path="/" element={<Articles articles={articles} setArticles={setArticles}/>} />
     <Route path="/api/articles/:article_id" element={<IndividualArticle />}/>
     <Route path="/api/articles" element={<Articles articles={articles} setArticles={setArticles} />}/>
