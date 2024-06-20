@@ -3,6 +3,7 @@ import { fetchComments } from "../utils/apicalls"
 import { CommentCards } from "./CommentCards"
 import { CommentPageButtons } from "./CommentPageButtons";
 import { PostComment } from "./PostComment";
+
 export const Comments = ({article_id, totalComments}) => {
     
     const [loading, setLoading] = useState(true)
