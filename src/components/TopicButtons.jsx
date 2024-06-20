@@ -1,27 +1,23 @@
 import { useEffect, useState } from "react"
-import { fetchArticles, fetchTopics } from "../utils/apicalls"
-
-export const TopicButtons = ({setArticles, setTopicQuery}) => {
+import { fetchTopics } from "../utils/apicalls"
+import { Link } from "react-router-dom"
+export const TopicButtons = () => {
     const [topics, setTopics] = useState([])
-
+    
     useEffect(()=> {
         fetchTopics().then((response) => {
             setTopics(response.data.topics)
         })
     }, [])
 
-    const handleTopic = (event) => {
-       setTopicQuery(event.target.id)
-    }
-
     const buttons = topics.map((topic) => {
-        return <button key={topic.slug} className="nav-button" id={topic.slug} onClick={handleTopic}>{topic.description}</button>  })
-    const allArticles = <button className="nav-button" id={''} onClick={handleTopic}>All Articles</button>   
-    return <>
+        return <Link key={topic.slug} id={topic.slug} to={`/api/articles?topic=${topic.slug}`} className="nav-button">{topic.slug}</Link> })
+
+    const allArticles = <Link className="nav-button" to={'/api/articles'}>All</Link>
+
+    return <nav>
     {allArticles}
     {buttons}
-    </>
-        
-   
+    </nav>
 
 }

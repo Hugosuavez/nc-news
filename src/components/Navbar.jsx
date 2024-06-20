@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { TopicButtons } from "./TopicButtons"
 
-export const Navbar = ({setArticles, setTopicQuery}) => {
+export const Navbar = ({setArticles}) => {
     const navigate = useNavigate()
 
     const handleClick = () => {
@@ -11,6 +11,6 @@ export const Navbar = ({setArticles, setTopicQuery}) => {
     <button 
    className="home-button" onClick={handleClick}>Home</button>
     <br />
-    <TopicButtons setArticles={setArticles} setTopicQuery={setTopicQuery}/>
+    <TopicButtons setArticles={setArticles} />
     </nav>)
 }

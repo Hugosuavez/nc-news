@@ -1,5 +1,5 @@
 import { DeleteButton } from "./DeleteButton"
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { UserContext } from './UserContext'
 
 export const CommentCards = ({comments, setComments}) => {

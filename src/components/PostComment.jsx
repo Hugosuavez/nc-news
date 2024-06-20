@@ -9,8 +9,6 @@ export const PostComment = ({article_id, setComments}) => {
     const [err, setErr] = useState(null)
     const [buttonDisabled, setButtonDisabled] = useState()
 
-    
-
     const handleComment = (event) => {
         setNewComment(event.target.value)
         setErr(null)
