@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
-import { useSearchParams } from "react-router-dom"
 import { fetchArticles } from "../utils/apicalls"
 import { ArticleCards } from "./ArticleCards"
-import { ArticleQueries } from './ArticleQueries'
 import { PageButtons } from "./Pagebuttons"
-
+import { useSearchParams } from "react-router-dom"
+import { ArticleQueries } from './ArticleQueries'
 export const Articles = ({articles, setArticles}) => {
 
     const [totalArticles, setTotalArticles] = useState(0)
@@ -13,6 +12,8 @@ export const Articles = ({articles, setArticles}) => {
 
     const [searchParams, setSearchParams] = useSearchParams()
     const topicQuery = searchParams.get("topic")
+    const sortByQuery = searchParams.get("sort_by")
+    const orderQuery = searchParams.get("order")
     
     useEffect(() => {
         const page = 1
