@@ -11,7 +11,6 @@ export const Articles = ({articles, setArticles}) => {
     const [pageNumber, setPageNumber]= useState(1)
     const [searchParams, setSearchParams] = useSearchParams()
     const topic = searchParams.get("topic")
-
     useEffect(() => {
         const page = 1
         fetchArticles(page, topic)
