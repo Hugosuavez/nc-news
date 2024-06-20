@@ -1,3 +1,22 @@
+.container {
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  height: 100vh;
+  grid-gap: 10px;
+  grid-template-areas: 
+  "header header header header"
+  "sidebar query query query"
+  "sidebar article1 article2 article3"
+  "sidebar article article article"
+  "sidebar article article article"
+  "sidebar article article article"
+  "sidebar article article article"
+  "sidebar footer footer footer";
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -6,11 +25,27 @@
 }
 
 .header {
-  margin-left: 15%;
   margin-bottom: 5px;
   text-align: center;
   background-color: rgb(52, 228, 96);
   padding-bottom: 10px;
+  grid-area: header;
+}
+
+.footer {
+  grid-area: footer;
+}
+.query {
+  grid-area: query;
+}
+
+.navbar {
+  text-align: center;
+  padding-top: 50px;
+  color: white;
+  background-color: rgb(70, 100, 105);
+  padding: 20px;
+  grid-area: sidebar;
 }
 
 .dropdown {
@@ -19,20 +54,13 @@
   margin-right: 50px;
   margin-bottom: 5px;
   background-color: rgb(233, 221, 111);
+  grid-area: header;
 }
 
-.navbar {
-  text-align: center;
-  padding-top: 50px;
-  width: 15%;
-  color: white;
-  background-color: rgb(70, 100, 105);
-  padding: 20px;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+.dropdown:focus {
+  background-color: rgb(223, 204, 40);
 }
+
 
 .home-button {
   width: auto;
@@ -45,6 +73,10 @@
   margin-bottom: 4px;
   white-space:pre-wrap;
   word-break:break-word;
+}
+
+.home-button:hover {
+  background-color:  rgb(204, 206, 94);;
 }
 
 .nav-button {
@@ -60,20 +92,10 @@
   max-width: 130px;
   white-space:pre-wrap;
   word-break:break-word;
+  font-size: 12px;
 }
-
-.container {
-  display: grid;
-}
-
-.article-card {
-  list-style-type: none;
-  border: 1px solid black;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  box-sizing: border-box;
-  width: auto;
-  padding: 10px;
+.nav-button:hover {
+  background-color: rgb(111, 111, 255);
 }
 
 .article-list {
@@ -84,6 +106,41 @@
 .article-image {
   width: 90%;
 }
+
+.article-card {
+  list-style-type: none;
+  border: 3px solid #466469;
+  border-radius: 20px;
+  border-style: groove;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  grid-row: 2 / 5;
+  grid-column: 2 / 5;
+}
+
+.grid-item1 {
+  grid-area: article1;
+}
+
+.grid-item2 {
+ grid-area: article2;
+}
+.grid-item3 {
+  grid-area: article3;
+ }
+
+/* .topic {
+  text-align: center;
+  color:  indigo;
+  border-radius: 50px;
+  border:2px solid #466469;
+  width: 80px;
+  border-style: ridge;
+  font-size: 16px;
+} */
+
+
 
 .comment-box {
   border: 1px solid black;
@@ -98,9 +155,6 @@
   width: 60%;
 }
 
-.content {
-  margin-left: 15%;
-}
 
 .individual-article {
   margin-left: 40px;

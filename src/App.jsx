@@ -8,27 +8,23 @@ import { IndividualArticle } from './components/IndividualArticle'
 import { DefaultErrorPage } from './components/DefaultErrorPage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
 
 const [articles, setArticles] = useState([])
 
- return (<div className='container'>
-  <div className='header'>
+ return (
+ <main className='container'>
     <ToastContainer/>
-  <Header />
-  </div>
-  <div className='sidebar'>
-  <Navbar setArticles={setArticles} />
-  </div>
-  <div className='content'>
-  <Routes>
-    <Route path="*" element={<DefaultErrorPage />} />
-    <Route path="/" element={<Articles articles={articles} setArticles={setArticles}/>} />
-    <Route path="/api/articles/:article_id" element={<IndividualArticle />}/>
-    <Route path="/api/articles" element={<Articles articles={articles} setArticles={setArticles} />}/>
-  </Routes>
-  </div>
-  </div>
+    <Header />
+      <Navbar setArticles={setArticles} />
+    <Routes>
+     <Route path="*" element={<DefaultErrorPage />} />
+      <Route path="/" element={<Articles articles={articles} setArticles={setArticles}/>} />
+     <Route path="/api/articles" element={<Articles articles={articles} setArticles={setArticles} />}/>
+     <Route path="/api/articles/:article_id" element={<IndividualArticle />}/>
+    </Routes>
+  </main>
  )
 }
 

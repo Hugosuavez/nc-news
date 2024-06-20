@@ -23,7 +23,9 @@ export const PageButtons = ({totalArticles, setArticles, topicQuery, pageNumber,
         i++
         
     }
-    return (<>{buttonArray}
+    return (<section className="footer">
+    {buttonArray}
     <p>Viewing page {pageNumber} of {pages}</p>
-    <p>Total Results {totalArticles}</p></>)
+    <p>Total Results {totalArticles}</p>
+    </section>)
 }

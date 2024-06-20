@@ -37,8 +37,9 @@ export const Articles = ({articles, setArticles}) => {
 
     if(error){return <ErrorPage error={error}/>}
 
-    return (<><ArticleQueries setSearchParams={setSearchParams} searchParams={searchParams}/>
-    <ul className="article-list"><ArticleCards articles={articles}/></ul>
-            <PageButtons totalArticles={totalArticles} setArticles={setArticles} topicQuery={topicQuery} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+    return (<>
+    <ArticleQueries setSearchParams={setSearchParams} searchParams={searchParams}/>
+    <ul><ArticleCards articles={articles}/></ul>
+    <PageButtons totalArticles={totalArticles} setArticles={setArticles} topicQuery={topicQuery} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </>)
 }
