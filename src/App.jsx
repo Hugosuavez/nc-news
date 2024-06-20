@@ -5,7 +5,7 @@ import { Articles } from './components/Articles'
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { IndividualArticle } from './components/IndividualArticle'
-
+import { ErrorPage } from './components/ErrorPage'
 
 function App() {
 
@@ -20,6 +20,7 @@ const [articles, setArticles] = useState([])
   </div>
   <div className='content'>
   <Routes>
+    <Route path="*" element={<ErrorPage />} />
     <Route path="/" element={<Articles articles={articles} setArticles={setArticles}/>} />
     <Route path="/api/articles/:article_id" element={<IndividualArticle />}/>
     <Route path="/api/articles" element={<Articles articles={articles} setArticles={setArticles} />}/>
