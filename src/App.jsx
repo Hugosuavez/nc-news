@@ -5,7 +5,7 @@ import { Articles } from './components/Articles'
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { IndividualArticle } from './components/IndividualArticle'
-import { ArticleQueries } from './components/ArticleQueries'
+
 
 function App() {
 
@@ -14,7 +14,6 @@ const [articles, setArticles] = useState([])
  return (<div className='container'>
   <div className='header'>
   <Header />
-  <ArticleQueries />
   </div>
   <div className='sidebar'>
   <Navbar setArticles={setArticles} />

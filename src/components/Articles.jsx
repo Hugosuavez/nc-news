@@ -3,7 +3,7 @@ import { fetchArticles } from "../utils/apicalls"
 import { ArticleCards } from "./ArticleCards"
 import { PageButtons } from "./Pagebuttons"
 import { useSearchParams } from "react-router-dom"
-
+import { ArticleQueries } from './ArticleQueries'
 export const Articles = ({articles, setArticles}) => {
 
     const [totalArticles, setTotalArticles] = useState(0)
@@ -33,7 +33,8 @@ export const Articles = ({articles, setArticles}) => {
     
     if(loading){return <p>Loading...</p>}
 
-    return (<><ul className="article-list"><ArticleCards articles={articles}/></ul>
+    return (<><ArticleQueries />
+    <ul className="article-list"><ArticleCards articles={articles}/></ul>
             <PageButtons totalArticles={totalArticles} setArticles={setArticles} topicQuery={topicQuery} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </>)
 }
