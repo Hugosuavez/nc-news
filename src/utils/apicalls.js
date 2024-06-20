@@ -13,7 +13,6 @@ export const fetchArticles = (page, topic, sort_by, order) => {
         order
     }})
     .then((response) => {
-        
         return response
     })
 }
@@ -24,6 +23,7 @@ export const fetchIndividualArticle = (id) => {
     .then((response) => {
         return response
     })
+    
 }
 
 export const fetchComments = (article_id, p) => {
@@ -45,11 +45,9 @@ export const updateArticleVotes = (article_id, inc_votes) => {
 }
 
 export const addComment = (article_id, username, body) => {
-    
     const commentBody = {
         username, body
     }
-    
     const endpoint = `/api/articles/${article_id}/comments`
     
     return newsApi

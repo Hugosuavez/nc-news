@@ -23,7 +23,6 @@ export const PostComment = ({article_id, setComments}) => {
         .then((response) => {
             setButtonDisabled(false)
             setNewComment('')
-            console.log(response.data.comment)
             setComments((currentComments) => [response.data.comment, ...currentComments])
         })
         .catch((err) => {
