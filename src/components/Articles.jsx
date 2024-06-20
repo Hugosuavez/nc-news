@@ -3,18 +3,21 @@ import { fetchArticles } from "../utils/apicalls"
 import { ArticleCards } from "./ArticleCards"
 import { PageButtons } from "./Pagebuttons"
 import { useSearchParams } from "react-router-dom"
-
+import { ArticleQueries } from './ArticleQueries'
 export const Articles = ({articles, setArticles}) => {
 
     const [totalArticles, setTotalArticles] = useState(0)
     const [loading, setLoading] = useState(true)
     const [pageNumber, setPageNumber]= useState(1)
-    const [searchParams, setSearchParams] = useSearchParams()
-    const topic = searchParams.get("topic")
 
+    const [searchParams, setSearchParams] = useSearchParams()
+    const topicQuery = searchParams.get("topic")
+    const sortByQuery = searchParams.get("sort_by")
+    const orderQuery = searchParams.get("order")
+    
     useEffect(() => {
         const page = 1
-        fetchArticles(page, topic)
+        fetchArticles(page, topicQuery, sortByQuery, orderQuery)
         .then((body) => {
             setLoading(false)
             setArticles(body.data.articles)
@@ -24,11 +27,12 @@ export const Articles = ({articles, setArticles}) => {
         .catch((err) => {
             console.log(err)
         })
-    }, [topic])
+    }, [topicQuery, sortByQuery, orderQuery])
     
     if(loading){return <p>Loading...</p>}
 
-    return (<><ul className="article-list"><ArticleCards articles={articles}/></ul>
-            <PageButtons totalArticles={totalArticles} setArticles={setArticles} topic={topic} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+    return (<><ArticleQueries setSearchParams={setSearchParams} searchParams={searchParams}/>
+    <ul className="article-list"><ArticleCards articles={articles}/></ul>
+            <PageButtons totalArticles={totalArticles} setArticles={setArticles} topicQuery={topicQuery} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </>)
 }

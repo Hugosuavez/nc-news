@@ -5,6 +5,8 @@ import { Articles } from './components/Articles'
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { IndividualArticle } from './components/IndividualArticle'
+
+
 function App() {
 
 const [articles, setArticles] = useState([])
