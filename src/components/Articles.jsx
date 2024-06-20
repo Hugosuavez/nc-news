@@ -9,11 +9,14 @@ export const Articles = ({articles, setArticles}) => {
     const [totalArticles, setTotalArticles] = useState(0)
     const [loading, setLoading] = useState(true)
     const [pageNumber, setPageNumber]= useState(1)
+
     const [searchParams, setSearchParams] = useSearchParams()
     const topicQuery = searchParams.get("topic")
     const sortByQuery = searchParams.get("sort_by")
     const orderQuery = searchParams.get("order")
-   
+    
+    
+
     useEffect(() => {
         const page = 1
         fetchArticles(page, topicQuery, sortByQuery, orderQuery)
