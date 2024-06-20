@@ -6,8 +6,8 @@ import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import { IndividualArticle } from './components/IndividualArticle'
 import { DefaultErrorPage } from './components/DefaultErrorPage'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify'
 function App() {
 
 const [articles, setArticles] = useState([])
