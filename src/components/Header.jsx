@@ -5,9 +5,8 @@ import { UserContext } from './UserContext'
 export const Header = () => {
     const {username} = useContext(UserContext)
     
-    return (<>
-    <h1>NC News</h1>
-    <button>+</button>
-    <button>User: {username}</button>
-    </>)
+    return (<section className='header'>
+    <button className='user-button'>User: {username}</button>
+    <h1 className='logo'>NC News</h1>
+    </section>)
 }

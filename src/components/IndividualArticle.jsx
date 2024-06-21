@@ -37,11 +37,11 @@ export const IndividualArticle = () => {
     <>
       <section className="individual-article">
         <h3 id="title">
-          {article.title} by {article.author}
+          {article.title}
         </h3>
         <img className="article-image" width="200px" src={article.article_img_url} alt="" />
         <p>{article.body}</p>
-        <p>{date}</p>
+        <p className="article-author">{article.author} | {article.topic} | {date}</p>
         <UpdateVotes article={article} />
         <button onClick={handleClick}>{article.comment_count} comments, click to view</button>
       </section>

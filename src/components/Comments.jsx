@@ -29,7 +29,7 @@ export const Comments = ({article_id, totalComments}) => {
     if(error){return <ErrorPage error={error}/>}
     return (<>
     <PostComment article_id={article_id} setComments={setComments} />
-    <ul>{<CommentCards comments={comments} setComments={setComments}/>}</ul>
+    <CommentCards comments={comments} setComments={setComments}/>
     <CommentPageButtons totalComments={totalComments} setComments={setComments}  article_id={article_id}/>
     </>)
 }
