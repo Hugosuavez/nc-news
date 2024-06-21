@@ -17,7 +17,7 @@ const [articles, setArticles] = useState([])
     <ToastContainer/>
  <main className='container'>
     <Header />
-      <Navbar setArticles={setArticles} />
+    <Navbar setArticles={setArticles} />
     <Routes>
      <Route path="*" element={<DefaultErrorPage />} />
       <Route path="/" element={<Articles articles={articles} setArticles={setArticles}/>} />

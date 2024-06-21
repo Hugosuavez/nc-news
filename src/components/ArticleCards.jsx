@@ -4,7 +4,7 @@ export const ArticleCards = ({ articles }) => {
   return articles.map((article, index) => {
     const date = new Date(article.created_at).toDateString();
     return (
-      <li className={`article-card`} key={article.article_id}>
+      <article className={`article-card`} key={article.article_id}>
         <h3 className="topic">{article.topic}</h3>
         <h2>
           {article.title} by {article.author}
@@ -15,7 +15,7 @@ export const ArticleCards = ({ articles }) => {
         <button>Votes: {article.votes}</button>
         <button>Comments: {article.comment_count}</button>
         <Link to={`/api/articles/${article.article_id}`}>View Article</Link>
-      </li>
+      </article>
     );
   });
 };
