@@ -1,6 +1,5 @@
 @media only screen and (min-width: 480px){
 
-
 .container {
   background-color: antiquewhite;
   display: grid;
@@ -167,9 +166,11 @@
 }
 
 @media only screen and (max-width: 480px) {
-  img {
-    display: none;
+    #root {
+    padding: 1rem;
+    text-align: center;
   }
+  
   .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -196,9 +197,9 @@
   .header {
     margin-bottom: 5px;
     text-align: center;
-    background-color: rgb(52, 228, 96);
     padding-bottom: 10px;
     grid-area: header;
+    border-bottom: ridge;
   }
 
   .navbar {
@@ -244,42 +245,41 @@
     
   }
 
-  #root {
-    padding: 1rem;
-    text-align: center;
-  }
-  
+
   
   .home-button:hover {
     background-color:  rgb(204, 206, 94);;
   }
   
-  .article-list {
-    text-align: center;
-    margin: auto;
-  }
-  
-  .article-image {
-    width: 90%;
-  }
-  
   .article-card {
     list-style-type: none;
     border: 3px solid #466469;
-    border-radius: 20px;
+    border-radius: 2px;
     border-style: groove;
     margin-bottom: 10px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 20px 10px 20px 10px;
   }
-  
+
+  .article-image {
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  .article-header {
+    font-size: 18px;
+  }
+
+  .article-author {
+    font-style: italic;
+  }
+
   .topic {
     text-align: center;
-    color:  indigo;
-    border-radius: 50px;
-    border:2px solid #466469;
+   
+   
     width: 80px;
-    border-style: ridge;
+    
     font-size: 16px;
   }
   
