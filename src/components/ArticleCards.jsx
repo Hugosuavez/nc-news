@@ -6,9 +6,8 @@ export const ArticleCards = ({ articles }) => {
     return (
       <article className={`article-card`} key={article.article_id}>
         <h3 className="topic">{article.topic}</h3>
-        <h2>
-          {article.title} by {article.author}
-        </h2>
+        <h2>{article.title} </h2>
+        <h3>by {article.author}</h3>
         <img className="article-image" src={article.article_img_url} alt="" />
         <br />
         <p>{date}</p>

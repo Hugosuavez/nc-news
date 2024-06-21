@@ -22,10 +22,10 @@ export const TopicButtons = () => {
     const buttons = topics.map((topic) => {
         return <Link key={topic.slug} id={topic.slug} to={`/api/articles?topic=${topic.slug}`} className="nav-button">{topic.slug}</Link> })
         
-    const allArticles = <Link className="nav-button" to={'/api/articles'}>All</Link>
+    const allArticles = <Link className="nav-button" to={'/api/articles'}>all</Link>
 
     return <nav>
-    <button className="home-button" onClick={handleClick}>Home</button>
+    <button className="home-button" onClick={handleClick}>home</button>
     {allArticles}
     {buttons}
     </nav>
