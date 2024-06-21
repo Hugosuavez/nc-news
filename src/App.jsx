@@ -13,9 +13,9 @@ function App() {
 
 const [articles, setArticles] = useState([])
 
- return (
- <main className='container'>
+ return (<>
     <ToastContainer/>
+ <main className='container'>
     <Header />
       <Navbar setArticles={setArticles} />
     <Routes>
@@ -25,6 +25,7 @@ const [articles, setArticles] = useState([])
      <Route path="/api/articles/:article_id" element={<IndividualArticle />}/>
     </Routes>
   </main>
+  </>
  )
 }
 

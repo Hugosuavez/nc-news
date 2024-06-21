@@ -8,7 +8,7 @@
   grid-template-areas: 
   "header header header header"
   "sidebar query query query"
-  "sidebar article1 article2 article3"
+  "sidebar article article article"
   "sidebar article article article"
   "sidebar article article article"
   "sidebar article article article"
@@ -36,7 +36,7 @@
   grid-area: footer;
 }
 .query {
-  grid-area: query;
+  grid-area: header;
 }
 
 .navbar {
@@ -51,7 +51,7 @@
 .dropdown {
   text-align: center;
   border-radius: 10px;
-  margin-right: 50px;
+  margin-right: 25px;
   margin-bottom: 5px;
   background-color: rgb(233, 221, 111);
   grid-area: header;
@@ -115,22 +115,10 @@
   margin-bottom: 10px;
   box-sizing: border-box;
   padding: 10px;
-  grid-row: 2 / 5;
-  grid-column: 2 / 5;
 }
 
-.grid-item1 {
-  grid-area: article1;
-}
 
-.grid-item2 {
- grid-area: article2;
-}
-.grid-item3 {
-  grid-area: article3;
- }
-
-/* .topic {
+.topic {
   text-align: center;
   color:  indigo;
   border-radius: 50px;
@@ -138,9 +126,17 @@
   width: 80px;
   border-style: ridge;
   font-size: 16px;
-} */
+}
 
-
+.individual-article {
+  margin-left: 40px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: auto;
+  padding: 10px;
+  text-align: center;
+}
 
 .comment-box {
   border: 1px solid black;
@@ -155,16 +151,6 @@
   width: 60%;
 }
 
-
-.individual-article {
-  margin-left: 40px;
-  border: 1px solid black;
-  border-radius: 20px;
-  box-sizing: border-box;
-  width: auto;
-  padding: 10px;
-  text-align: center;
-}
 
 #title {
   width: auto;

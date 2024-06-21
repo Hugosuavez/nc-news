@@ -4,7 +4,7 @@ export const ArticleCards = ({ articles }) => {
   return articles.map((article, index) => {
     const date = new Date(article.created_at).toDateString();
     return (
-      <li className={`grid-item${index + 1}`} key={article.article_id}>
+      <li className={`article-card`} key={article.article_id}>
         <h3 className="topic">{article.topic}</h3>
         <h2>
           {article.title} by {article.author}

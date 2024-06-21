@@ -39,7 +39,7 @@ export const Articles = ({articles, setArticles}) => {
 
     return (<>
     <ArticleQueries setSearchParams={setSearchParams} searchParams={searchParams}/>
-    <ul><ArticleCards articles={articles}/></ul>
+    <ArticleCards articles={articles}/>
     <PageButtons totalArticles={totalArticles} setArticles={setArticles} topicQuery={topicQuery} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </>)
 }
