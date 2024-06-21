@@ -1,6 +1,5 @@
-import { useState } from "react"
 import { fetchArticles } from "../utils/apicalls"
-
+import ScrollIntoView from 'react-scroll-into-view'
 export const PageButtons = ({totalArticles, setArticles, topicQuery, pageNumber, setPageNumber}) => {
 
     const handleClick = (event) => {
@@ -23,8 +22,11 @@ export const PageButtons = ({totalArticles, setArticles, topicQuery, pageNumber,
         i++
         
     }
-    return (<section className="footer">
+    return (
+    <section className="footer">
+    <ScrollIntoView selector="#top">
     {buttonArray}
+    </ScrollIntoView>
     <p>Viewing page {pageNumber} of {pages}</p>
     <p>Total Results {totalArticles}</p>
     </section>)

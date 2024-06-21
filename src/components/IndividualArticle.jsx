@@ -5,6 +5,7 @@ import { Comments } from "./Comments";
 import { UpdateVotes } from "./UpdateVotes";
 import { ErrorPage } from "./ErrorPage";
 
+
 export const IndividualArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
@@ -23,8 +24,10 @@ export const IndividualArticle = () => {
     });
   }, [article_id]);
 
-   const handleClick = () => {
+   const handleClick = (e) => {
+    e.preventDefault()
     toggleComments ? setToggleComments(false) : setToggleComments(true);
+    Comments.scrollIntoView()
   };
 
   if (loading) {

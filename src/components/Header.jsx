@@ -7,6 +7,6 @@ export const Header = () => {
     
     return (<section className='header'>
     <button className='user-button'>User: {username}</button>
-    <h1 className='logo'>NC News</h1>
+    <h1 className='logo' id="top">NC News</h1>
     </section>)
 }

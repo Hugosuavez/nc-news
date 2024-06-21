@@ -1,6 +1,6 @@
 import { fetchComments } from "../utils/apicalls"
 import { useState } from "react"
-
+import ScrollIntoView from 'react-scroll-into-view'
 export const CommentPageButtons = ({totalComments, setComments, article_id}) => {
    
     const [pageNumber, setPageNumber]= useState(1)
@@ -26,7 +26,11 @@ export const CommentPageButtons = ({totalComments, setComments, article_id}) => 
         i++
     }
 
-    return (<nav>{buttonArray}
+    return (
+    <nav>
+    <ScrollIntoView selector="#top">
+    {buttonArray}
+    </ScrollIntoView>
     <p>Viewing page {pageNumber} of {pages}</p>
     </nav>)
 }

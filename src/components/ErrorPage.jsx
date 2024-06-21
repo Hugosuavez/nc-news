@@ -2,5 +2,5 @@
 
 export const ErrorPage = ({error}) => {
     
-return <p>{error.response.data.msg}</p>
+return <p className="error-message">{error.response.data.msg}</p>
 }

@@ -1,5 +1,5 @@
 
 
 export const DefaultErrorPage = (error) => {
-    return <p>Something went wrong</p>
+    return <p className="error-message">Something went wrong</p>
 }
