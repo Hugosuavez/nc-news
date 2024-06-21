@@ -9,7 +9,7 @@ export const ArticleCards = ({ articles }) => {
         <h2 className="article-header">{article.title} </h2>
         <p className="article-author">{article.author} | {article.topic} | {date}</p>
         <p></p>
-        <Link className="nav-button" to={`/api/articles/${article.article_id}`}>View Article</Link>
+        <Link className="article-link" to={`/api/articles/${article.article_id}`}>View Article</Link>
       </article>
     );
   });
