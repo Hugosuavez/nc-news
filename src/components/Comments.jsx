@@ -28,7 +28,9 @@ export const Comments = ({article_id, totalComments}) => {
     if(loading){return <p>Loading...</p>}
     if(error){return <ErrorPage error={error}/>}
     return (<>
+    <nav id="post-cmnt">
     <PostComment article_id={article_id} setComments={setComments} />
+    </nav>
     <CommentCards comments={comments} setComments={setComments}/>
     <CommentPageButtons totalComments={totalComments} setComments={setComments}  article_id={article_id}/>
     </>)

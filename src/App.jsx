@@ -15,9 +15,14 @@ const [articles, setArticles] = useState([])
 
  return (<>
     <ToastContainer/>
- <main className='container'>
-    <Header />
+    <div id="browser-nav">
     <Navbar setArticles={setArticles} />
+    </div>
+ <main className='container'>
+    <div id="mobile-nav">
+    <Navbar setArticles={setArticles} />
+    </div>
+    <Header />
     <Routes>
      <Route path="*" element={<DefaultErrorPage />} />
       <Route path="/" element={<Articles articles={articles} setArticles={setArticles}/>} />

@@ -4,13 +4,13 @@ import { useEffect, useState } from "react";
 import { Comments } from "./Comments";
 import { UpdateVotes } from "./UpdateVotes";
 import { ErrorPage } from "./ErrorPage";
+import ScrollIntoView from 'react-scroll-into-view'
 
 
 export const IndividualArticle = () => {
   const { article_id } = useParams();
   const [article, setArticle] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [toggleComments, setToggleComments] = useState(false);
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -26,8 +26,7 @@ export const IndividualArticle = () => {
 
    const handleClick = (e) => {
     e.preventDefault()
-    toggleComments ? setToggleComments(false) : setToggleComments(true);
-    Comments.scrollIntoView()
+
   };
 
   if (loading) {
@@ -45,15 +44,17 @@ export const IndividualArticle = () => {
         <img className="article-image" width="200px" src={article.article_img_url} alt="" />
         <p>{article.body}</p>
         <p className="article-author">{article.author} | {article.topic} | {date}</p>
-        <UpdateVotes article={article} />
-        <button onClick={handleClick}>{article.comment_count} comments, click to view</button>
+        
+        <ScrollIntoView selector="#cmt">
+        <button className="cmnt-button" onClick={handleClick}>{article.comment_count} comments, click to view</button>
+      </ScrollIntoView>
+      <UpdateVotes article={article} />
       </section>
-      {toggleComments ? (
-        <Comments
+        <section id="cmt"><Comments
           article_id={article_id}
           totalComments={article.comment_count}
-        />
-      ) : null}
+        /></section>
+      
     </>
   );
 };
