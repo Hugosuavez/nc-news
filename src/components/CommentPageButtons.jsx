@@ -26,7 +26,7 @@ export const CommentPageButtons = ({totalComments, setComments, article_id}) => 
         i++
     }
 
-    return (<>{buttonArray}
+    return (<nav>{buttonArray}
     <p>Viewing page {pageNumber} of {pages}</p>
-    </>)
+    </nav>)
 }

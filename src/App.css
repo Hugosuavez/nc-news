@@ -258,10 +258,6 @@
     
   }
 
-
-  
-  
-  
   .article-card {
     list-style-type: none;
     border: 3px solid #466469;
@@ -283,17 +279,64 @@
 
   .article-author {
     font-style: italic;
+    text-align: center;
   }
 
   .topic {
     text-align: center;
-   
-   
     width: 80px;
-    
     font-size: 16px;
   }
+
   
+  .individual-article {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .vote-tag {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 4px 6px;
+    margin-left: 5px;
+    grid-area: navbar;
+    font-style: italic;
+  }  
+
+  .vote-button{
+    margin-left: 8px;
+    margin-right: 8px
+  }
+  #title {
+    width: auto;
+    text-align: center;
+  }
+  
+  .comment-box {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+    width: auto;
+  }
+
+  .comment-card {
+    list-style-type: none;
+    border: 2px #466469;
+    border-radius: 2px;
+    border-style: groove;
+    margin-bottom: 10px;
+    padding: 20px 10px 20px 10px;
+  }
+
+  .comment-body {
+    text-align: left;
+    margin-left: 10px;
+  }
+
+  .error-message {
+    color: red;
+  }
 }
 
 

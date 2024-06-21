@@ -43,11 +43,10 @@ export const UpdateVotes = ({ article }) => {
 
   return (
     <>
-      <fieldset>
-        <legend>Votes {votes}</legend>
-        <button onClick={handleVote}>{userVoted ? "-" : "+"}</button>
+      <label className="vote-tag" htmlFor="">Votes: {votes}  
+        <button className="vote-button" onClick={handleVote}>{userVoted ? "-" : "+"}</button>
         {err ? <p className="error-message">{err}</p> : null}
-      </fieldset>
+     </label>
     </>
   );
 };
