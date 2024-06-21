@@ -6,7 +6,7 @@ export const Header = () => {
     const {username} = useContext(UserContext)
     
     return (<section className='header'>
-    <button className='userButton'>User: {username}</button>
-    <h1>NC News</h1>
+    <button className='user-button'>User: {username}</button>
+    <h1 className='logo'>NC News</h1>
     </section>)
 }
