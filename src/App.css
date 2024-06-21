@@ -122,7 +122,18 @@ background-color:  rgb(139, 165, 145);
 
 .article-image {
   width: 90%;
+  border-radius: 10px;
 }
+
+.article-header {
+  font-size: 18px;
+}
+
+.article-author {
+  font-style: italic;
+  text-align: center;
+}
+
 
 .article-link {
   background-color:  rgb(199, 218, 203);
