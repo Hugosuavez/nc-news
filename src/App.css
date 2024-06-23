@@ -238,7 +238,6 @@ background-color:  rgb(139, 165, 145);
     grid-gap: 10px;
     grid-template-areas: 
     "header"
-    "navbar"
     "query"
     "article"
     "article"
