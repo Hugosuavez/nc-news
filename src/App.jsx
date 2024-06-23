@@ -8,6 +8,7 @@ import { IndividualArticle } from './components/IndividualArticle'
 import { DefaultErrorPage } from './components/DefaultErrorPage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import {ScrollToTop} from "./components/ScrollToTop";
 
 function App() {
 
@@ -15,9 +16,15 @@ const [articles, setArticles] = useState([])
 
  return (<>
     <ToastContainer/>
- <main className='container'>
-    <Header />
+    <ScrollToTop />
+    <div id="browser-nav">
     <Navbar setArticles={setArticles} />
+    </div>
+ <main className='container'>
+    <div id="mobile-nav">
+    <Navbar setArticles={setArticles} />
+    </div>
+    <Header />
     <Routes>
      <Route path="*" element={<DefaultErrorPage />} />
       <Route path="/" element={<Articles articles={articles} setArticles={setArticles}/>} />

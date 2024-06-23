@@ -5,7 +5,7 @@ import { addComment } from '../utils/apicalls'
 
 export const PostComment = ({article_id, setComments}) => {
     const {username} = useContext(UserContext)
-    const [newComment, setNewComment] = useState()
+    const [newComment, setNewComment] = useState('')
     const [err, setErr] = useState(null)
     const [buttonDisabled, setButtonDisabled] = useState()
 
@@ -16,7 +16,7 @@ export const PostComment = ({article_id, setComments}) => {
 
     const submitComment = (event) => {
         event.preventDefault()
-        if(!newComment){setErr('Please write a comment...')}
+        if(newComment.length === 0){setErr('Please write a comment...')}
         else{
         setButtonDisabled(true)
         addComment(article_id, username, newComment)

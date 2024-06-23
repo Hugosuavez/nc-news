@@ -28,7 +28,7 @@ export const CommentPageButtons = ({totalComments, setComments, article_id}) => 
 
     return (
     <nav>
-    <ScrollIntoView selector="#top">
+    <ScrollIntoView selector="#post-cmnt">
     {buttonArray}
     </ScrollIntoView>
     <p>Viewing page {pageNumber} of {pages}</p>
