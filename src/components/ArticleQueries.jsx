@@ -17,13 +17,13 @@ export const ArticleQueries = ({setSearchParams, searchParams}) => {
     return <nav className="query">
        <legend> {'Sort by '}
         <select className="dropdown" onChange={handleChange}>
-            <option value="created_at" >Date</option>
-            <option value="comment_count">Comments</option>
-            <option value="votes">Votes</option>
+            <option value="DESC">Most</option>
+            <option value="ASC">Least</option>
         </select>
         <select className="dropdown" onChange={handleChange}>
-            <option value="DESC">DESC</option>
-            <option value="ASC">ASC</option>
+            <option value="created_at" >Recent</option>
+            <option value="comment_count">Comments</option>
+            <option value="votes">Votes</option>
         </select>
        </legend>
        </nav>

@@ -277,6 +277,9 @@ background-color:  rgb(139, 165, 145);
   .navbar {
     text-align: center;
     background-color: rgb(70, 100, 105);
+    position:fixed;
+    width: 87%;
+    top: 0;
   }
 
   .home-button {
