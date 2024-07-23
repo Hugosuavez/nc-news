@@ -1,255 +1,248 @@
-@media only screen and (min-width: 480px){
+@media only screen and (min-width: 480px) {
+  .container {
+    margin-left: 150px;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: 100vh;
+    grid-gap: 10px;
+    grid-template-areas:
+      "header"
+      "query"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "footer";
+  }
 
-.container {
-  margin-left: 150px;
-  background-color: antiquewhite;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  height: 100vh;
-  grid-gap: 10px;
-  grid-template-areas: 
-  "header"
-  "query"
-  "article"
-  "article"
-  "article"
-  "article"
-  "article"
-  "article"
-  "article"
-  "article"
-  "article"
-  "article"
-  "article"
-  "footer";
-}
+  #root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
 
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+  .header {
+    margin-bottom: 5px;
+    text-align: center;
+    padding-bottom: 10px;
+    grid-area: header;
+    border-bottom: ridge;
+  }
 
-.header {
-  margin-bottom: 5px;
-  text-align: center;
-  padding-bottom: 10px;
-  grid-area: header;
-  border-bottom: ridge;
-}
+  .logo {
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+    font-size: 30px;
+  }
 
-.logo {
-  float: left;
-  margin-left: 50px;
-  margin-top: 30px;
-  font-size: 30px;
-}
+  .user-button {
+    float: right;
+    margin-top: 40px;
+    margin-right: 30px;
+    font-size: 11px;
+  }
 
-.user-button {
-  float: right;
-  margin-top: 40px;
-  margin-right: 30px;
-  font-size: 11px;
-}
+  .footer {
+    grid-area: footer;
+  }
+  .query {
+    grid-area: query;
+  }
 
+  .navbar {
+    text-align: center;
+    background-color: rgb(70, 100, 105);
+    padding: 20px;
+    grid-area: sidebar;
+    width: 100px;
+    position: fixed;
+  }
 
+  .home-button {
+    background-color: rgb(199, 218, 203);
+    text-decoration: none;
+    padding: 3px 5px;
+    margin-top: 15px;
+    margin-bottom: 4px;
+    margin-right: 15px;
+    margin-top: 2px;
+    grid-area: navbar;
+  }
 
-.footer {
-  grid-area: footer;
-}
-.query {
-  grid-area: query;
-}
+  .nav-button {
+    border: 2px solid black;
+    background-color: rgb(199, 218, 203);
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 4px 6px;
+    margin-left: 5px;
+    grid-area: navbar;
+    font-style: italic;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .nav-button:hover {
+    background-color: rgb(139, 165, 145);
+  }
+  .home-button:hover {
+    background-color: rgb(139, 165, 145);
+  }
 
-.navbar {
-  text-align: center;
-  background-color: rgb(70, 100, 105);
-  padding: 20px;
-  grid-area: sidebar;
-  width: 100px;
-  position:fixed;
-}
+  .dropdown {
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    background-color: rgb(233, 221, 111);
+    grid-area: header;
+  }
 
-.home-button {
-  background-color:  rgb(199, 218, 203);
-  text-decoration: none;
-  padding: 3px 5px;
-  margin-top: 15px;
-  margin-bottom: 4px;
-  margin-right: 15px;
-  margin-top: 2px;
-  grid-area: navbar;
-}
+  .article-card {
+    list-style-type: none;
+    border: 3px solid #466469;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
 
-.nav-button { 
-  border: 2px solid black;
-  background-color:  rgb(199, 218, 203);
-  color: black;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 4px 6px;
-  margin-left: 5px;
-  grid-area: navbar;
-  font-style: italic;  
-  display: block;
-  margin-bottom: 4px;
-}  
-.nav-button:hover {
-  background-color:  rgb(139, 165, 145);
-}
-.home-button:hover {
-background-color:  rgb(139, 165, 145);
-}
+  .article-image {
+    width: 90%;
+    border-radius: 10px;
+  }
 
-.dropdown {
-  text-align: center;
-  border-radius: 10px;
-  margin-right: 25px;
-  margin-bottom: 5px;
-  background-color: rgb(233, 221, 111);
-  grid-area: header;
-}
+  .article-header {
+    font-size: 18px;
+  }
 
+  .article-author {
+    font-style: italic;
+    text-align: center;
+  }
 
-.article-card {
-  list-style-type: none;
-  border: 3px solid #466469;
-  border-radius: 2px;
-  margin-bottom: 10px;
-  padding: 10px;
-}
+  .article-interaction {
+    font-style: italic;
+    text-align: right;
+    margin-right: 20px;
+  }
 
+  .article-link {
+    background-color: rgb(199, 218, 203);
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 4px 6px;
+    margin-left: 5px;
+    grid-area: navbar;
+    font-style: italic;
+  }
 
-.article-image {
-  width: 90%;
-  border-radius: 10px;
-}
+  .vote-tag {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 4px 6px;
+    margin-left: 5px;
+    grid-area: navbar;
+    font-style: italic;
+  }
 
-.article-header {
-  font-size: 18px;
-}
+  .vote-button {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  #title {
+    width: auto;
+    text-align: center;
+  }
 
-.article-author {
-  font-style: italic;
-  text-align: center;
-}
+  .comment-box {
+    border: 1px solid black;
+    margin-top: 10px;
+    padding: 10px;
+    width: auto;
+  }
 
-.article-interaction {
-  font-style: italic;
-  text-align: right;
-  margin-right: 20px;
-}
+  .individual-article {
+    padding: 10px;
+    text-align: left;
+  }
 
-.article-link {
-  background-color:  rgb(199, 218, 203);
-  color: black;
-  text-decoration: none;
-  font-size: 13px;
-  padding: 4px 6px;
-  margin-left: 5px;
-  grid-area: navbar;
-  font-style: italic;
-}  
+  .comment-input {
+    width: 60%;
+  }
 
-.vote-tag {
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 4px 6px;
-  margin-left: 5px;
-  grid-area: navbar;
-  font-style: italic;
-}  
+  #title {
+    width: auto;
+  }
 
-.vote-button{
-  margin-left: 8px;
-  margin-right: 8px
-}
-#title {
-  width: auto;
-  text-align: center;
-}
+  #comment-title {
+    width: auto;
+  }
 
-.comment-box {
-  border: 1px solid black;
-  margin-top: 10px;
-  padding: 10px;
-  width: auto;
-}
+  .comment-card {
+    list-style-type: none;
+    border: 2px #466469;
+    border-radius: 2px;
+    border-style: groove;
+    margin-bottom: 10px;
+    padding: 20px 10px 20px 10px;
+  }
 
-.individual-article {
-  padding: 10px;
-  text-align: left;
-}
+  .comment-body {
+    text-align: left;
+    margin-left: 10px;
+  }
 
-.comment-input {
-  width: 60%;
-}
+  .cmnt-button {
+    float: right;
+  }
 
-#title {
-  width: auto;
-}
-
-#comment-title {
-  width: auto;
-}
-
-.comment-card {
-  list-style-type: none;
-  border: 2px #466469;
-  border-radius: 2px;
-  border-style: groove;
-  margin-bottom: 10px;
-  padding: 20px 10px 20px 10px;
-}
-
-.comment-body {
-  text-align: left;
-  margin-left: 10px;
-}
-
-
-.cmnt-button {
-  float: right;
-}
-
-
-.error-message {
-  color: red;
-}
-#mobile-nav {
-  display: none;
-}
+  .error-message {
+    color: red;
+  }
+  #mobile-nav {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 480px) {
-    #root {
+  #root {
     padding: 1rem;
     text-align: center;
   }
-  
+
   .container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 70px 30px auto;
     height: 100vh;
     grid-gap: 10px;
-    grid-template-areas: 
-    "header"
-    "query"
-    "article"
-    "article"
-    "article"
-    "article"
-    "article"
-    "article"
-    "article"
-    "article"
-    "article"
-    "article"
-    "footer ";
+    grid-template-areas:
+      "header"
+      "query"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "article"
+      "footer ";
   }
 
   .header {
@@ -276,22 +269,22 @@ background-color:  rgb(139, 165, 145);
   .navbar {
     text-align: center;
     background-color: rgb(70, 100, 105);
-    position:fixed;
+    position: fixed;
     width: 87%;
     top: 0;
   }
 
   .home-button {
-    background-color:  rgb(199, 218, 203);
+    background-color: rgb(199, 218, 203);
     text-decoration: none;
     padding: 3px 5px;
     margin-right: 15px;
     grid-area: navbar;
     margin-top: 2px;
   }
-  
+
   .nav-button {
-    background-color:  rgb(199, 218, 203);
+    background-color: rgb(199, 218, 203);
     color: black;
     text-decoration: none;
     font-size: 13px;
@@ -299,12 +292,12 @@ background-color:  rgb(139, 165, 145);
     margin-left: 5px;
     grid-area: navbar;
     font-style: italic;
-  }  
-  .nav-button:hover {
-    background-color:  rgb(139, 165, 145);
   }
-.home-button:hover {
-  background-color:  rgb(139, 165, 145);
+  .nav-button:hover {
+    background-color: rgb(139, 165, 145);
+  }
+  .home-button:hover {
+    background-color: rgb(139, 165, 145);
   }
   .query {
     grid-area: query;
@@ -328,7 +321,7 @@ background-color:  rgb(139, 165, 145);
     padding: 20px 10px 5px 10px;
   }
   .article-link {
-    background-color:  rgb(199, 218, 203);
+    background-color: rgb(199, 218, 203);
     color: black;
     text-decoration: none;
     font-size: 13px;
@@ -336,7 +329,7 @@ background-color:  rgb(139, 165, 145);
     margin-left: 5px;
     grid-area: navbar;
     font-style: italic;
-  }  
+  }
   .article-image {
     width: 90%;
     border-radius: 10px;
@@ -355,15 +348,12 @@ background-color:  rgb(139, 165, 145);
     font-style: italic;
     text-align: right;
   }
-  
 
   .individual-article {
     padding: 10px;
     text-align: left;
   }
 
-
-  
   .vote-tag {
     color: black;
     text-decoration: none;
@@ -372,18 +362,17 @@ background-color:  rgb(139, 165, 145);
     margin-left: 5px;
     grid-area: navbar;
     font-style: italic;
-  }  
+  }
 
-  .vote-button{
+  .vote-button {
     margin-left: 8px;
     margin-right: 8px;
-    
   }
   #title {
     width: auto;
     text-align: center;
   }
-  
+
   .comment-box {
     border: 1px solid black;
     margin-top: 10px;
@@ -416,5 +405,3 @@ background-color:  rgb(139, 165, 145);
     display: none;
   }
 }
-
-

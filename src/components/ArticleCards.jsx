@@ -7,9 +7,18 @@ export const ArticleCards = ({ articles }) => {
       <article className={`article-card`} key={article.article_id}>
         <img className="article-image" src={article.article_img_url} alt="" />
         <h2 className="article-header">{article.title} </h2>
-        <p className="article-author">{article.author} | {article.topic} | {date}</p>
-        <Link className="article-link" to={`/api/articles/${article.article_id}`}>View Article</Link>
-        <p className="article-interaction">{article.votes} Votes | {article.comment_count} Comments</p>
+        <p className="article-author">
+          {article.author} | {article.topic} | {date}
+        </p>
+        <Link
+          className="article-link"
+          to={`/api/articles/${article.article_id}`}
+        >
+          View Article
+        </Link>
+        <p className="article-interaction">
+          {article.votes} Votes | {article.comment_count} Comments
+        </p>
       </article>
     );
   });
