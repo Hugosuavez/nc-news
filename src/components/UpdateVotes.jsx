@@ -7,7 +7,7 @@ export const UpdateVotes = ({ article }) => {
   const { username } = useContext(UserContext);
 
   const [votes, setVotes] = useState();
-  
+
   useEffect(() => {
     setVotes(article.votes);
   }, []);
@@ -43,10 +43,13 @@ export const UpdateVotes = ({ article }) => {
 
   return (
     <>
-      <label className="vote-tag" htmlFor="">Votes: {votes}  
-        <button className="vote-button" onClick={handleVote}>{userVoted ? "-" : "+"}</button>
+      <label className="vote-tag" htmlFor="">
+        Votes: {votes}
+        <button className="vote-button" onClick={handleVote}>
+          {userVoted ? "-" : "+"}
+        </button>
         {err ? <p className="error-message">{err}</p> : null}
-     </label>
+      </label>
     </>
   );
 };
