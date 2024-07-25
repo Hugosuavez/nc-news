@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchArticles } from "../utils/apicalls";
 import { ArticleCards } from "./ArticleCards";
 import { PageButtons } from "./Pagebuttons";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { ArticleQueries } from "./ArticleQueries";
 import { ErrorPage } from "./ErrorPage";
 import { ClimbingBoxLoader } from "react-spinners";
@@ -13,6 +13,8 @@ export const Articles = ({ articles, setArticles }) => {
   const [pageNumber, setPageNumber] = useState(1);
   const [error, setError] = useState(null);
 
+  const {topic} = useParams()
+
   const [searchParams, setSearchParams] = useSearchParams();
   const topicQuery = searchParams.get("topic");
   const sortByQuery = searchParams.get("sort_by");
@@ -20,7 +22,7 @@ export const Articles = ({ articles, setArticles }) => {
 
   useEffect(() => {
     const page = 1;
-    fetchArticles(page, topicQuery, sortByQuery, orderQuery)
+    fetchArticles(page, topic, sortByQuery, orderQuery)
       .then((body) => {
         setLoading(false);
         setArticles(body.data.articles);
@@ -31,7 +33,7 @@ export const Articles = ({ articles, setArticles }) => {
         setLoading(false);
         setError(err);
       });
-  }, [topicQuery, sortByQuery, orderQuery]);
+  }, [topic, sortByQuery, orderQuery]);
 
   if (loading) {
     return (
