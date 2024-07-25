@@ -58,6 +58,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    grid-area: article;
   }
   .header {
     margin-bottom: 5px;
@@ -271,6 +272,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    grid-area: article;
   }
 
   .header {

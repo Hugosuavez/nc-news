@@ -4,6 +4,8 @@ import { CommentCards } from "./CommentCards";
 import { CommentPageButtons } from "./CommentPageButtons";
 import { PostComment } from "./PostComment";
 import { ErrorPage } from "./ErrorPage";
+import { ClimbingBoxLoader } from "react-spinners";
+
 
 export const Comments = ({ article_id, totalComments }) => {
   const [comments, setComments] = useState([]);
@@ -24,7 +26,11 @@ export const Comments = ({ article_id, totalComments }) => {
   }, [article_id, pageNumber]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="spinner-container">
+        <ClimbingBoxLoader />
+      </div>
+    );
   }
   if (error) {
     return <ErrorPage error={error} />;
