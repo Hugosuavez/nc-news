@@ -13,27 +13,25 @@ export const Articles = ({ articles, setArticles }) => {
   const [pageNumber, setPageNumber] = useState(1);
   const [error, setError] = useState(null);
 
-  const {topic} = useParams()
+  const { topic } = useParams();
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const topicQuery = searchParams.get("topic");
   const sortByQuery = searchParams.get("sort_by");
   const orderQuery = searchParams.get("order");
 
   useEffect(() => {
-    const page = 1;
-    fetchArticles(page, topic, sortByQuery, orderQuery)
+    
+    fetchArticles(pageNumber, topic, sortByQuery, orderQuery)
       .then((body) => {
         setLoading(false);
         setArticles(body.data.articles);
         setTotalArticles(body.data.total_count);
-        setPageNumber(1);
       })
       .catch((err) => {
         setLoading(false);
         setError(err);
       });
-  }, [topic, sortByQuery, orderQuery]);
+  }, [topic, sortByQuery, orderQuery, pageNumber]);
 
   if (loading) {
     return (
@@ -51,13 +49,11 @@ export const Articles = ({ articles, setArticles }) => {
     <>
       <ArticleQueries
         setSearchParams={setSearchParams}
-        searchParams={searchParams}
+        setPageNumber={setPageNumber}
       />
       <ArticleCards articles={articles} />
       <PageButtons
         totalArticles={totalArticles}
-        setArticles={setArticles}
-        topicQuery={topicQuery}
         pageNumber={pageNumber}
         setPageNumber={setPageNumber}
       />

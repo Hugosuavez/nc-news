@@ -1,18 +1,12 @@
-import { fetchArticles } from "../utils/apicalls";
 import ScrollIntoView from "react-scroll-into-view";
 export const PageButtons = ({
   totalArticles,
-  setArticles,
-  topicQuery,
   pageNumber,
   setPageNumber,
 }) => {
   const handleClick = (event) => {
     const page = event.target.id;
     setPageNumber(page);
-    fetchArticles(page, topicQuery).then((body) => {
-      setArticles(body.data.articles);
-    });
   };
 
   const buttonArray = [];

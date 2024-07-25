@@ -1,14 +1,7 @@
-export const ArticleQueries = ({ setSearchParams, searchParams }) => {
+export const ArticleQueries = ({ setSearchParams, setPageNumber }) => {
   const handleChange = (event) => {
-    if (event.target.value === "ASC" || event.target.value === "DESC") {
-      const newParams = new URLSearchParams(searchParams);
-      newParams.set("order", event.target.value);
-      setSearchParams(newParams);
-    } else {
-      const newParams = new URLSearchParams(searchParams);
-      newParams.set("sort_by", event.target.value);
-      setSearchParams(newParams);
-    }
+    setSearchParams(event.target.value);
+    setPageNumber(1)
   };
 
   return (
@@ -16,13 +9,12 @@ export const ArticleQueries = ({ setSearchParams, searchParams }) => {
       <legend>
         {"Sort by "}
         <select className="dropdown" onChange={handleChange}>
-          <option value="DESC">Most</option>
-          <option value="ASC">Least</option>
-        </select>
-        <select className="dropdown" onChange={handleChange}>
-          <option value="created_at">Recent</option>
-          <option value="comment_count">Comments</option>
-          <option value="votes">Votes</option>
+          <option value="?sort_by=created_at">Most recent</option>
+          <option value="?sort_by=created_at&order=ASC">Least Recent</option>
+          <option value="?sort_by=comment_count">Most Comments</option>
+          <option value="?sort_by=comment_count&order=ASC">Least Comments</option>
+          <option value="?sort_by=votes">Most Votes</option>
+          <option value="?sort_by=votes&order=ASC">Least Votes</option>
         </select>
       </legend>
     </nav>
