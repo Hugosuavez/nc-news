@@ -5,6 +5,7 @@ import { PageButtons } from "./Pagebuttons";
 import { useSearchParams } from "react-router-dom";
 import { ArticleQueries } from "./ArticleQueries";
 import { ErrorPage } from "./ErrorPage";
+import { ClimbingBoxLoader } from "react-spinners";
 
 export const Articles = ({ articles, setArticles }) => {
   const [totalArticles, setTotalArticles] = useState(0);
@@ -33,7 +34,11 @@ export const Articles = ({ articles, setArticles }) => {
   }, [topicQuery, sortByQuery, orderQuery]);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="spinner-container">
+        <ClimbingBoxLoader />
+      </div>
+    );
   }
 
   if (error) {
