@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchTopics } from "../utils/apicalls";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export const TopicButtons = () => {
+
+export const TopicButtons = ({setGrid}) => {
   const [topics, setTopics] = useState([]);
-
+  const navigate = useNavigate()
   useEffect(() => {
     fetchTopics().then((response) => {
       setTopics(response.data.topics);
@@ -16,8 +17,7 @@ export const TopicButtons = () => {
     window.location.href = `/`;
   };
   const handleTopic = () => {
-    e.preventDefault();
-    window.location.href;
+    setGrid('home-view')
   };
 
   const buttons = topics.map((topic) => {
