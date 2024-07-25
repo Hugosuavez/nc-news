@@ -12,7 +12,7 @@ import { ScrollToTop } from "./components/ScrollToTop";
 
 function App() {
   const [articles, setArticles] = useState([]);
-
+  const [grid, setGrid] = useState('home-view')
   return (
     <>
       <ToastContainer />
@@ -20,7 +20,7 @@ function App() {
       <div id="browser-nav">
         <Navbar setArticles={setArticles} />
       </div>
-      <main className="container">
+      <main className={`container ${grid}`}>
         <div id="mobile-nav">
           <Navbar setArticles={setArticles} />
         </div>
@@ -29,7 +29,7 @@ function App() {
           <Route path="*" element={<DefaultErrorPage />} />
           <Route
             path="/"
-            element={<Articles articles={articles} setArticles={setArticles} />}
+            element={<Articles articles={articles} setArticles={setArticles} setGrid={setGrid} />}
           />
           <Route
             path="/api/articles"
@@ -41,7 +41,7 @@ function App() {
           />
           <Route 
             path="/api/:topic"
-            element={<Articles articles={articles} setArticles={setArticles}/>}
+            element={<Articles articles={articles} setArticles={setArticles} setGrid={setGrid}/>}
           />
         </Routes>
       </main>

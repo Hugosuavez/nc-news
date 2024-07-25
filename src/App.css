@@ -1,5 +1,8 @@
 @media only screen and (min-width: 480px) {
   .container {
+    background-color: antiquewhite;
+  }
+  .home-view {
     margin-left: 150px;
     background-color: antiquewhite;
     display: grid;
@@ -19,7 +22,7 @@
       "footer footer footer";
   }
 
-  /* #container {
+  .article-view {
     margin-left: 150px;
     background-color: antiquewhite;
     display: grid;
@@ -29,7 +32,6 @@
     grid-gap: 10px;
     grid-template-areas:
       "header"
-      "query"
       "article"
       "comment-input"
       "comment"
@@ -43,7 +45,7 @@
       "comment"
       "comment"
       "footer";
-  } */
+  }
 
   #root {
     max-width: 1280px;
@@ -203,13 +205,12 @@
   .individual-article {
     padding: 10px;
     text-align: left;
-    /* grid-area: article; */
-    
+    grid-area: article;
   }
 
   .comment-input {
     width: 60%;
-    /* grid-area: comment-input; */
+    grid-area: comment-input;
   }
 
   #title {
@@ -227,7 +228,7 @@
     border-style: groove;
     margin-bottom: 10px;
     padding: 20px 10px 20px 10px;
-    /* grid-area: comment; */
+    grid-area: comment;
   }
 
   .comment-body {

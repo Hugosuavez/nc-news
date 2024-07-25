@@ -7,7 +7,7 @@ import { ArticleQueries } from "./ArticleQueries";
 import { ErrorPage } from "./ErrorPage";
 import { ClimbingBoxLoader } from "react-spinners";
 
-export const Articles = ({ articles, setArticles }) => {
+export const Articles = ({ articles, setArticles, setGrid }) => {
   const [totalArticles, setTotalArticles] = useState(0);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(1);
@@ -51,7 +51,7 @@ export const Articles = ({ articles, setArticles }) => {
         setSearchParams={setSearchParams}
         setPageNumber={setPageNumber}
       />
-      <ArticleCards articles={articles} />
+      <ArticleCards articles={articles} setGrid={setGrid} />
       <PageButtons
         totalArticles={totalArticles}
         pageNumber={pageNumber}
