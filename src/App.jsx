@@ -2,10 +2,10 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { Navbar } from "./components/Navbar";
 import { Articles } from "./components/Articles";
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { IndividualArticle } from "./components/IndividualArticle";
 import { DefaultErrorPage } from "./components/DefaultErrorPage";
+import { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -38,6 +38,10 @@ function App() {
           <Route
             path="/api/articles/:article_id"
             element={<IndividualArticle />}
+          />
+          <Route 
+            path="/api/:topic"
+            element={<Articles articles={articles} setArticles={setArticles}/>}
           />
         </Routes>
       </main>

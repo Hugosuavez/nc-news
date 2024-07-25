@@ -9,9 +9,10 @@ export const Comments = ({ article_id, totalComments }) => {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   useEffect(() => {
-    fetchComments(article_id)
+    fetchComments(article_id, pageNumber)
       .then((response) => {
         setLoading(false);
         setComments(response.data.comments);
@@ -20,7 +21,7 @@ export const Comments = ({ article_id, totalComments }) => {
         setLoading(false);
         setError(err);
       });
-  }, [article_id]);
+  }, [article_id, pageNumber]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -36,8 +37,8 @@ export const Comments = ({ article_id, totalComments }) => {
       <CommentCards comments={comments} setComments={setComments} />
       <CommentPageButtons
         totalComments={totalComments}
-        setComments={setComments}
-        article_id={article_id}
+        setPageNumber={setPageNumber}
+        pageNumber={pageNumber}
       />
     </>
   );

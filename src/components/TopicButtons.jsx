@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchTopics } from "../utils/apicalls";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export const TopicButtons = () => {
   const [topics, setTopics] = useState([]);
@@ -12,20 +11,23 @@ export const TopicButtons = () => {
     });
   }, []);
 
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate("/");
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.location.href = `/`;
+  };
+  const handleTopic = () => {
+    e.preventDefault();
+    window.location.href;
   };
 
- 
   const buttons = topics.map((topic) => {
     return (
       <Link
         key={topic.slug}
         id={topic.slug}
-        to={`/api/articles?topic=${topic.slug}`}
+        to={`/api/${topic.slug}`}
         className="nav-button"
+        onClick={handleTopic}
       >
         {topic.slug}
       </Link>
@@ -33,7 +35,7 @@ export const TopicButtons = () => {
   });
 
   const allArticles = (
-    <Link className="nav-button" to={"/api/articles"}>
+    <Link className="nav-button" to={"/api/articles"} onClick={handleTopic}>
       all
     </Link>
   );
