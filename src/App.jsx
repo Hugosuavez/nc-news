@@ -35,7 +35,7 @@ function App() {
             path="/api/articles"
             element={<Articles articles={articles} setArticles={setArticles} />}
           />
-          <Route
+          <Route 
             path="/api/articles/:article_id"
             element={<IndividualArticle />}
           />
