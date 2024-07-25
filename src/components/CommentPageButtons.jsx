@@ -3,17 +3,12 @@ import { useState } from "react";
 import ScrollIntoView from "react-scroll-into-view";
 export const CommentPageButtons = ({
   totalComments,
-  setComments,
-  article_id,
+  setPageNumber,
+  pageNumber
 }) => {
-  const [pageNumber, setPageNumber] = useState(1);
   const handleClick = (event) => {
     const page = event.target.id;
     setPageNumber(page);
-
-    fetchComments(article_id, page).then((body) => {
-      setComments(body.data.comments);
-    });
   };
 
   const buttonArray = [];
