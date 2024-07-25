@@ -7,7 +7,7 @@
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 106px 20px auto;
     height: 100vh;
     grid-gap: 10px;
     grid-template-areas:
@@ -85,6 +85,7 @@
     grid-area: footer;
   }
   .query {
+    text-align: right;
     grid-area: query;
   }
 
@@ -247,7 +248,7 @@
   .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 30px auto;
+    grid-template-rows: 70px 6px auto;
     height: 100vh;
     grid-gap: 10px;
     grid-template-areas:
@@ -327,13 +328,12 @@
     background-color: rgb(139, 165, 145);
   }
   .query {
+    text-align: right;
     grid-area: query;
   }
   .dropdown {
     text-align: center;
     border-radius: 10px;
-    margin-right: 2px;
-    margin-bottom: 5px;
     background-color: rgb(233, 221, 111);
     grid-area: query;
   }
