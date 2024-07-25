@@ -42,7 +42,7 @@ export const TopicButtons = ({setGrid}) => {
 
   return (
     <nav>
-      <button className="home-button" onClick={handleClick}>
+      <button className="nav-button" onClick={handleClick}>
         home
       </button>
       {allArticles}

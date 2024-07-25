@@ -93,19 +93,9 @@
     background-color: rgb(70, 100, 105);
     padding: 20px;
     grid-area: sidebar;
-    width: 100px;
+    width: 90px;
     position: fixed;
-  }
-
-  .home-button {
-    background-color: rgb(199, 218, 203);
-    text-decoration: none;
-    padding: 3px 5px;
-    margin-top: 15px;
-    margin-bottom: 4px;
-    margin-right: 15px;
-    margin-top: 2px;
-    grid-area: navbar;
+    top: 140px
   }
 
   .nav-button {
