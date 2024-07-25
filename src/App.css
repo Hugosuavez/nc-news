@@ -30,7 +30,12 @@
     padding: 2rem;
     text-align: center;
   }
-
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
   .header {
     margin-bottom: 5px;
     text-align: center;
@@ -245,6 +250,12 @@
       "footer ";
   }
 
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .header {
     margin-bottom: 5px;
     text-align: center;
@@ -305,7 +316,7 @@
   .dropdown {
     text-align: center;
     border-radius: 10px;
-    margin-right: 25px;
+    margin-right: 2px;
     margin-bottom: 5px;
     background-color: rgb(233, 221, 111);
     grid-area: query;

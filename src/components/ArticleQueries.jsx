@@ -14,7 +14,7 @@ export const ArticleQueries = ({ setSearchParams, searchParams }) => {
   return (
     <nav className="query">
       <legend>
-        {" "}
+        
         {"Sort by "}
         <select className="dropdown" onChange={handleChange}>
           <option value="DESC">Most</option>

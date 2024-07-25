@@ -5,6 +5,7 @@ import { Comments } from "./Comments";
 import { UpdateVotes } from "./UpdateVotes";
 import { ErrorPage } from "./ErrorPage";
 import ScrollIntoView from "react-scroll-into-view";
+import { ClimbingBoxLoader } from "react-spinners";
 
 export const IndividualArticle = () => {
   const { article_id } = useParams();
@@ -29,7 +30,11 @@ export const IndividualArticle = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="spinner-container">
+        <ClimbingBoxLoader />
+      </div>
+    );
   }
   if (error) {
     return <ErrorPage error={error} />;
