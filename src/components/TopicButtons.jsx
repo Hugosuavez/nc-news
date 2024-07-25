@@ -18,10 +18,7 @@ export const TopicButtons = () => {
     navigate("/");
   };
 
-  const handleQuery = () => {
-    console.log('hello world')
-  }
-
+ 
   const buttons = topics.map((topic) => {
     return (
       <Link
@@ -29,7 +26,6 @@ export const TopicButtons = () => {
         id={topic.slug}
         to={`/api/articles?topic=${topic.slug}`}
         className="nav-button"
-        onClick={handleQuery}
       >
         {topic.slug}
       </Link>
