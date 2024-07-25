@@ -1,5 +1,28 @@
 @media only screen and (min-width: 480px) {
   .container {
+    background-color: antiquewhite;
+  }
+  .home-view {
+    margin-left: 150px;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    height: 100vh;
+    grid-gap: 10px;
+    grid-template-areas:
+      "header header header"
+      "query query query"
+      "article article article"
+      "article article article"
+      "article article article"
+      "article article article"
+      "article article article"
+      "comment comment comment"
+      "footer footer footer";
+  }
+
+  .article-view {
     margin-left: 150px;
     background-color: antiquewhite;
     display: grid;
@@ -9,18 +32,18 @@
     grid-gap: 10px;
     grid-template-areas:
       "header"
-      "query"
       "article"
-      "article"
-      "article"
-      "article"
-      "article"
-      "article"
-      "article"
-      "article"
-      "article"
-      "article"
-      "article"
+      "comment-input"
+      "comment"
+      "comment"
+      "comment"
+      "comment"
+      "comment"
+      "comment"
+      "comment"
+      "comment"
+      "comment"
+      "comment"
       "footer";
   }
 
@@ -70,19 +93,9 @@
     background-color: rgb(70, 100, 105);
     padding: 20px;
     grid-area: sidebar;
-    width: 100px;
+    width: 90px;
     position: fixed;
-  }
-
-  .home-button {
-    background-color: rgb(199, 218, 203);
-    text-decoration: none;
-    padding: 3px 5px;
-    margin-top: 15px;
-    margin-bottom: 4px;
-    margin-right: 15px;
-    margin-top: 2px;
-    grid-area: navbar;
+    top: 140px
   }
 
   .nav-button {
@@ -182,10 +195,12 @@
   .individual-article {
     padding: 10px;
     text-align: left;
+    grid-area: article;
   }
 
   .comment-input {
     width: 60%;
+    grid-area: comment-input;
   }
 
   #title {
@@ -203,6 +218,7 @@
     border-style: groove;
     margin-bottom: 10px;
     padding: 20px 10px 20px 10px;
+    grid-area: comment;
   }
 
   .comment-body {

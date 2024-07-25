@@ -43,7 +43,8 @@ export const IndividualArticle = () => {
 
   return (
     <>
-      <section className="individual-article">
+      <main id="container2">
+        <section className="individual-article">
         <h3 id="title">{article.title}</h3>
         <img
           className="article-image"
@@ -55,20 +56,22 @@ export const IndividualArticle = () => {
         <p className="article-author">
           {article.author} | {article.topic} | {date}
         </p>
-
+      </section>
+      
         <ScrollIntoView selector="#cmt">
           <button className="cmnt-button" onClick={handleClick}>
             {article.comment_count} comments, click to view
           </button>
         </ScrollIntoView>
         <UpdateVotes article={article} />
-      </section>
+      
       <section id="cmt">
         <Comments
           article_id={article_id}
           totalComments={article.comment_count}
         />
       </section>
+      </main>
     </>
   );
 };

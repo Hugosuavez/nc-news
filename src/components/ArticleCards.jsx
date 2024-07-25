@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
 
-export const ArticleCards = ({ articles }) => {
+export const ArticleCards = ({ articles, setGrid }) => {
+  
+  const handleClick = () => {
+    setGrid('article-view')
+  }
+  
   return articles.map((article) => {
     const date = new Date(article.created_at).toDateString();
     return (
@@ -13,6 +18,7 @@ export const ArticleCards = ({ articles }) => {
         <Link
           className="article-link"
           to={`/api/articles/${article.article_id}`}
+          onClick={handleClick}
         >
           View Article
         </Link>
