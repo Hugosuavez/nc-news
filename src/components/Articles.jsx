@@ -20,7 +20,6 @@ export const Articles = ({ articles, setArticles, setGrid }) => {
   const orderQuery = searchParams.get("order");
 
   useEffect(() => {
-    
     fetchArticles(pageNumber, topic, sortByQuery, orderQuery)
       .then((body) => {
         setLoading(false);
