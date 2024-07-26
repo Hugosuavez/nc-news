@@ -34,7 +34,7 @@ function App() {
           />
           <Route
             path="/api/articles"
-            element={<Articles articles={articles} setArticles={setArticles} />}
+            element={<Articles articles={articles} setArticles={setArticles} setGrid={setGrid} />}
           />
           <Route 
             path="/api/articles/:article_id"
