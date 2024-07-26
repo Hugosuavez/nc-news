@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 
 export const ArticleCards = ({ articles, setGrid }) => {
-  
   const handleClick = () => {
-    setGrid('article-view')
-  }
-  
+    setGrid("article-view");
+  };
+
   return articles.map((article) => {
     const date = new Date(article.created_at).toDateString();
     return (

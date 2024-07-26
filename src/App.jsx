@@ -5,21 +5,28 @@ import { Articles } from "./components/Articles";
 import { Routes, Route } from "react-router-dom";
 import { IndividualArticle } from "./components/IndividualArticle";
 import { DefaultErrorPage } from "./components/DefaultErrorPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ScrollToTop } from "./components/ScrollToTop";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  const [grid, setGrid] = useState('home-view')
+  const [grid, setGrid] = useState(() => {
+    const storedGrid = localStorage.getItem("grid");
+    return storedGrid ? storedGrid : "home-view";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("grid", grid);
+  }, [grid]);
 
   return (
     <>
       <ToastContainer />
       <ScrollToTop />
       <div id="browser-nav">
-        <Navbar setArticles={setArticles} />
+        <Navbar setArticles={setArticles} setGrid={setGrid} />
       </div>
       <main className={`container ${grid}`}>
         <div id="mobile-nav">
@@ -30,19 +37,37 @@ function App() {
           <Route path="*" element={<DefaultErrorPage />} />
           <Route
             path="/"
-            element={<Articles articles={articles} setArticles={setArticles} setGrid={setGrid} />}
+            element={
+              <Articles
+                articles={articles}
+                setArticles={setArticles}
+                setGrid={setGrid}
+              />
+            }
           />
           <Route
             path="/api/articles"
-            element={<Articles articles={articles} setArticles={setArticles} setGrid={setGrid} />}
+            element={
+              <Articles
+                articles={articles}
+                setArticles={setArticles}
+                setGrid={setGrid}
+              />
+            }
           />
-          <Route 
+          <Route
             path="/api/articles/:article_id"
             element={<IndividualArticle />}
           />
-          <Route 
+          <Route
             path="/api/:topic"
-            element={<Articles articles={articles} setArticles={setArticles} setGrid={setGrid}/>}
+            element={
+              <Articles
+                articles={articles}
+                setArticles={setArticles}
+                setGrid={setGrid}
+              />
+            }
           />
         </Routes>
       </main>

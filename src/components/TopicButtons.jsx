@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import { fetchTopics } from "../utils/apicalls";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const TopicButtons = ({ setGrid }) => {
   const [topics, setTopics] = useState([]);
-  const navigate = useNavigate();
+
   useEffect(() => {
-    fetchTopics().then((response) => {
-      setTopics(response.data.topics);
-    });
+    fetchTopics()
+      .then((response) => {
+        setTopics(response.data.topics);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    window.location.href = `/`;
-  };
-  const handleTopic = () => {
+  const handleClick = () => {
     setGrid("home-view");
   };
 
@@ -26,7 +26,7 @@ export const TopicButtons = ({ setGrid }) => {
         id={topic.slug}
         to={`/api/${topic.slug}`}
         className="nav-button"
-        onClick={handleTopic}
+        onClick={handleClick}
       >
         {topic.slug}
       </Link>
@@ -34,14 +34,14 @@ export const TopicButtons = ({ setGrid }) => {
   });
 
   const allArticles = (
-    <Link className="nav-button" to={"/api/articles"} onClick={handleTopic}>
+    <Link className="nav-button" to={"/api/articles"} onClick={handleClick}>
       all
     </Link>
   );
 
   return (
     <nav>
-      <Link className="nav-button" onClick={handleClick}>
+      <Link className="nav-button" to={"/"} onClick={handleClick}>
         home
       </Link>
       {allArticles}
