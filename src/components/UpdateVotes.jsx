@@ -6,11 +6,7 @@ import { UserContext } from "./UserContext";
 export const UpdateVotes = ({ article }) => {
   const { username } = useContext(UserContext);
 
-  const [votes, setVotes] = useState();
-
-  useEffect(() => {
-    setVotes(article.votes);
-  }, []);
+  const [votes, setVotes] = useState(article.votes);
 
   const [err, setErr] = useState(null);
   const [userVoted, setUserVoted] = useState();
@@ -41,9 +37,15 @@ export const UpdateVotes = ({ article }) => {
     } else setErr("Please log in to vote");
   };
 
+ 
+  if(article.author === username){
+    return (<>
+        <p className="vote-tag">Votes: {votes}</p>
+    </>)
+  }
   return (
     <>
-      <label className="vote-tag" htmlFor="">
+      <label className="vote-tag">
         Votes: {votes}
         <button className="vote-button" onClick={handleVote}>
           {userVoted ? "-" : "+"}
